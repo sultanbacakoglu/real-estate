@@ -69,6 +69,28 @@
     z-index: 1;
 }
 
+.position-relative {
+    position: relative;
+}
+
+.sale-badge,
+.rent-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    /* Green for Sale */
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.rent-badge {
+    background-color: #dc3545;
+    /* Red for Rent */
+}
+
 .card-bottom {
     right: 0;
     margin-top: -178px;

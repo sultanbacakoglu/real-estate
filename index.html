@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Website|Responsive</title>
@@ -14,10 +16,16 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- javascript -->
     <script src="script.js"></script>
+    <!-- Kendi JavaScript dosyam-->
+    <script src="/Users/sultanbacakoglu/Desktop/BLM2537/real estate2 /script.js"></script>
 
 </head>
 
 <body>
+    <!-- JavaScript ve Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- javascript -->
     <script src="script.js"></script>
 
@@ -25,6 +33,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -60,14 +70,46 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact Us</a>
                     </li>
-
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-dark ms-2" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">Giriş Yap</button>
+                    </li>
 
                 </ul>
-
 
             </div>
         </div>
     </nav>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Giriş Yap</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal contest-->
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta adresi</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Şifre</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="button" class="btn btn-dark ms-2" onclick="girisYap()">Giriş Yap</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <!-- hero -->
     <div id="carouselExampleAutoplaying" class="carousel slide">
@@ -105,7 +147,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="images/background6.jpg" class="d-block w-100-height" alt="img1">
+                <img src="images/background5.jpg" class="d-block w-100-height" alt="img1">
                 <div class="carousel-caption carousel1">
                     <p>3 / 3</p>
                     <h5>Property Buying<br> and Selling <br> Guides</h5>
@@ -126,25 +168,6 @@
             <span class="visually-hidden">Next</span>
         </button>
 
-
-        <!--<div class="col-md-4 z-1 position-absolute card-bottom card mb-3 card-color bg-dark" style="background: #000;">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title text-light ">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-white">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <img src="/Users/sultanbacakoglu/Desktop/BLM2537/real estate2 /images/about.jpg"
-                        class="img-fluid rounded-start" alt="card-img">
-                </div>
-            </div>
-        </div>-->
-
     </div>
 
     <!-- Popular -->
@@ -155,63 +178,76 @@
         </div>
 
         <div class="row row-cols-1 row-cols-lg-3 g-4 mt-2">
-            <div class="col">
-                <div class="card border-0 ">
+
+            <!-- Card 1 -->
+            <div class="col mb-4">
+                <div class="card border-0 position-relative">
+                    <div class="sale-badge">Sale</div>
                     <img src="/Users/sultanbacakoglu/Desktop/BLM2537/real estate2 /images/background3.jpg"
-                        class="card-img-top " alt="image1">
+                        class="card-img-top" alt="image1">
                     <div class="card-body">
-                        <p class="card-text text-muted">California, USA</p>
-                        <div class="d-flex justify-content-center mt-3">
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-car"></i> bed</p>
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-play"></i> 8 * 8</p>
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-compass"></i> 1500 m2</p>
+                        <p class="text-muted">Florida/Unites States</p>
+                        <div class="d-flex justify-content-between mb-3">
+                            <p class="card-text text-muted"><i class="fa fa-bed"></i> 4</p>
+                            <p class="card-text text-muted"><i class="fa fa-play"></i> 280 m²</p>
+                            <p class="card-text text-muted"><i class="fa fa-car"></i> Garage</p>
+                            <p class="card-text text-muted"><i class="fa fa-tree"></i> Garden</p>
                         </div>
-                        <div class="d-flex my-2">
+                        <!-- Book Now button -->
+                        <div class="d-flex justify-content-between align-items-center">
                             <button class="btn btn-lg text-white bg-dark px-4">Book Now</button>
-                            <h5 class="my-auto ms-auto"> $5.000.000</h5>
+                            <h5 class="my-auto">$4,500,000</h5>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card border-0 ">
+            <!-- Card 2 -->
+            <div class="col mb-4">
+                <div class="card border-0 position-relative">
+                    <div class="rent-badge">Rent</div>
                     <img src="images/home4.jpg" class="card-img-top" alt="image1">
                     <div class="card-body">
-                        <p class="card-text text-muted">Alaska, USA</p>
-                        <div class="d-flex justify-content-center mt-3">
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-car"></i> bed</p>
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-play"></i> 8 * 8</p>
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-compass"></i> 1500 m2</p>
+                        <p class="text-muted">Paris/France</p>
+                        <div class="d-flex justify-content-between mb-3">
+                            <p class="card-text text-muted"><i class="fa fa-bed"></i> 3</p>
+                            <p class="card-text text-muted"><i class="fa fa-play"></i> 150 m²</p>
+                            <p class="card-text text-muted"><i class="fa fa-map-marker"></i> Central</p>
+                            <p class="card-text text-muted"><i class="fa fa-shield"></i> Security</p>
                         </div>
-                        <div class="d-flex my-2">
+                        <!-- Book Now button -->
+                        <div class="d-flex justify-content-between align-items-center">
                             <button class="btn btn-lg text-white bg-dark px-4">Book Now</button>
-                            <h5 class="my-auto ms-auto"> $5.000.000</h5>
+                            <h5 class="my-auto">$4,000</h5>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card border-0 ">
-                    <img src="/Users/sultanbacakoglu/Desktop/BLM2537/real estate2 /images/background6.jpg"
-                        class="card-img-top " alt="image1">
+            <!-- Card 3 -->
+            <div class="col mb-4">
+                <div class="card border-0 position-relative">
+                    <div class="sale-badge">Sale</div>
+                    <img src="images/background5.jpg" class="card-img-top" alt="image1">
                     <div class="card-body">
-                        <p class="card-text text-muted">Montana, USA</p>
-                        <div class="d-flex justify-content-center mt-3">
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-car"></i> bed</p>
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-play"></i> 8 * 8</p>
-                            <p class="mx-4 text-muted card-text"><i class="fa fa-compass"></i> 1500 m2</p>
+                        <p class="text-muted">Muğla/Turkey</p>
+                        <div class="d-flex justify-content-between mb-3">
+                            <p class="card-text text-muted"><i class="fa fa-bed"></i> 5</p>
+                            <p class="card-text text-muted"><i class="fa fa-play"></i> 370 m²</p>
+                            <p class="card-text text-muted"><i class="fa fa-car"></i> Garage</p>
+                            <p class="card-text text-muted"><i class="fa fa-tree"></i> Garden</p>
                         </div>
-                        <div class="d-flex my-2">
+                        <!-- Book Now button -->
+                        <div class="d-flex justify-content-between align-items-center">
                             <button class="btn btn-lg text-white bg-dark px-4">Book Now</button>
-                            <h5 class="my-auto ms-auto"> $5.000.000</h5>
+                            <h5 class="my-auto">$3,900,000</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- logos and quotes -->
     <section class="bg-dark" style="margin-top: -15%;">
@@ -301,60 +337,209 @@
     <section class="container" style="margin-top: 100px;" id="blog">
         <p class="pt-05">Blog</p>
         <div class="d-flex">
-            <h2> Latest Housing Information</h2>
-            <button class="btn text-white bg-dark px-4 btn-md ms-auto">See All Articles</button>
+            <h2>Latest Housing Information</h2>
+            <button class="btn text-white bg-dark px-4 btn-md ms-auto" data-toggle="modal" data-target="#myModal">
+                See All Articles
+            </button>
         </div>
 
         <div class="row row-cols-1 row-cols-lg-3 g-4 mt-2">
+
+            <!-- Kart 1 -->
             <div class="col">
-                <div class="card border-0 ">
-                    <img src="/Users/sultanbacakoglu/Desktop/BLM2537/real estate2 /images/background3.jpg"
-                        class="card-img-top " alt="image1">
+                <div class="card border-0">
+                    <img src="images/rural.jpg" class="card-img-top" alt="image1">
                     <div class="card-body">
                         <p class="card-text text-muted">21 August 2024</p>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                            ducimus repellat, accusamus perspiciatis velit fugit voluptatem</p>
-
-                        <button class="btn text-primary px-4 btn-lg" style="background:#e4f8f9">Read More</button>
-
-
+                        <p class="card-text text-muted">When it comes to homes that blend rustic charm with natural
+                            elegance, log homes stand out as timeless classics. These unique dwellings, constructed
+                            primarily from logs, have a rich history and continue to captivate the hearts of homeowners
+                            seeking a connection with nature...</p>
+                        <button class="btn text-primary px-4 btn-lg" style="background:#e4f8f9" data-toggle="modal"
+                            data-target="#modal1">Read More
+                        </button>
                     </div>
                 </div>
             </div>
 
+            <!-- Kart 2 -->
             <div class="col">
-                <div class="card border-0 ">
-                    <img src="/Users/sultanbacakoglu/Desktop/BLM2537/real estate2 /images/background6.jpg"
-                        class="card-img-top " alt="image1">
+                <div class="card border-0">
+                    <img src="images/modern.jpg" class="card-img-top" alt="image2">
                     <div class="card-body">
                         <p class="card-text text-muted">17 January 2024</p>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                            ducimus repellat, accusamus perspiciatis velit fugit voluptatem</p>
-
-                        <button class="btn text-primary px-4 btn-lg" style="background:#e4f8f9">Read More</button>
-
-
+                        <p class="card-text text-muted">In the realm of architecture and design, modern homes stand as
+                            iconic representations of contemporary living. These architectural marvels showcase a
+                            harmonious blend of sleek aesthetics, innovative technologies, and functional spaces. The
+                            allure of modern homes extends beyon...</p>
+                        <button class="btn text-primary px-4 btn-lg" style="background:#e4f8f9" data-toggle="modal"
+                            data-target="#modal2">Read More
+                        </button>
                     </div>
                 </div>
             </div>
 
+            <!-- Kart 3 -->
             <div class="col">
-                <div class="card border-0 ">
-                    <img src="/Users/sultanbacakoglu/Desktop/BLM2537/real estate2 /images/background2.jpg"
-                        class="card-img-top " alt="image1">
+                <div class="card border-0">
+                    <img src="images/log.jpg" class="card-img-top" alt="image3">
                     <div class="card-body">
                         <p class="card-text text-muted">04 April 2024</p>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                            ducimus repellat, accusamus perspiciatis velit fugit voluptatem</p>
-
-                        <button class="btn text-primary px-4 btn-lg" style="background:#e4f8f9;">Read More</button>
-
-
+                        <p class="card-text text-muted">Nestled amidst the serene landscapes, rural homes stand as
+                            idyllic retreats, capturing the essence of simplicity and tranquility. Far removed from the
+                            hustle and bustle of urban life, these homes redefine the concept of living, offering a
+                            harmonious coexistence with nature. A Symphony of Wood...</p>
+                        <button class="btn text-primary px-4 btn-lg" style="background:#e4f8f9" data-toggle="modal"
+                            data-target="#modal3">Read More
+                        </button>
                     </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="modal1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/rural.jpg" alt="Modal Image" class="img-fluid"
+                        style="width: 100%; height: auto; max-height: 80vh;">
+                    <h5> <br> <br> Embracing Tranquility in Countryside Living</h5>
+                    <p>
+                        Nestled amidst the serene landscapes, rural homes stand as idyllic retreats, capturing the
+                        essence of simplicity and tranquility. Far removed from the hustle and bustle of urban life,
+                        these homes redefine the concept of living, offering a harmonious coexistence with nature.
+
+                    <h5>Architectural Harmony:</h5>
+                    Rural homes come in diverse architectural styles, each telling a unique story of tradition and
+                    regional influences. From charming cottages to expansive farmsteads, the architecture seamlessly
+                    integrates with the natural surroundings, creating a picturesque tableau.
+
+                    <h5>The Rhythms of Nature:</h5>
+                    Life in a rural home unfolds to the rhythms of nature. The expansive vistas of rolling fields,
+                    meandering streams, and lush greenery become integral parts of daily living. Residents wake up
+                    to the song of birds, breathe in the crisp, clean air, and witness the changing colors of the
+                    landscape with each passing season.
+
+                    <h5>Intentional Living:</h5>
+                    Rural living is characterized by a deliberate and intentional pace. Residents cultivate a
+                    connection to the land, partaking in activities that celebrate the cycles of agriculture and the
+                    changing seasons. Whether it's tending to a garden, caring for animals, or enjoying a leisurely
+                    walk in the countryside, life in rural homes is a celebration of simplicity.
+
+                    <h5>Community Bonds:</h5>
+                    In rural settings, the sense of community is palpable. Neighbors are not just faces but integral
+                    parts of a supportive network. Festivals, gatherings, and communal activities foster a strong
+                    sense of belonging, creating a close-knit community where everyone knows each other.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="modal2">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/modern.jpg" alt="Modal Image" class="img-fluid"
+                        style="width: 100%; height: auto; max-height: 80vh;">
+                    <h5> <br> <br> The Elegance of Modern Homes</h5>
+                    <p>
+                        In the realm of architecture and design, modern homes stand as iconic representations of
+                        contemporary living. These architectural marvels showcase a harmonious blend of sleek
+                        aesthetics, innovative technologies, and functional spaces. The allure of modern homes extends
+                        beyond their outward appearance, delving into the very essence of how we perceive and experience
+                        our living spaces. <br>
+
+                    <h5>Design Innovation:</h5>
+                    Modern homes are distinguished by their emphasis on clean lines, open spaces, and an abundance
+                    of natural light. Architects leverage innovative materials and technologies to create structures
+                    that not only meet the needs of modern living but also inspire a sense of awe. The minimalist
+                    approach often characterizes the design, eliminating unnecessary clutter and allowing the beauty
+                    of simplicity to shine through. <br>
+
+                    <h5>Integration with Nature:</h5>
+                    A defining feature of many modern homes is their seamless integration with the surrounding
+                    environment. Large windows, glass walls, and open layouts bring the outdoors inside, fostering a
+                    connection with nature. This integration not only enhances the aesthetic appeal but also
+                    promotes a sense of well-being and tranquility. <br>
+
+                    <h5>Sustainable Living:</h5>
+                    In response to the global emphasis on sustainability, modern homes often incorporate
+                    eco-friendly features. From energy-efficient appliances to solar panels and green roofs, these
+                    dwellings strive to minimize their environmental impact. Sustainability is not just a trend but
+                    a fundamental principle embedded in the design and construction of modern homes. <br>
+
+                    <h5>Smart Technologies:</h5>
+                    Modern homes are equipped with cutting-edge technologies that enhance convenience, security, and
+                    energy efficiency. Smart home systems allow residents to control various aspects of their homes,
+                    from temperature and lighting to security systems, through mobile devices. This integration of
+                    technology aims to streamline daily life and create homes that adapt to the evolving needs of
+                    their inhabitants.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="modal3">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/log.jpg" alt="Modal Image" class="img-fluid"
+                        style="width: 100%; height: auto; max-height: 80vh;">
+                    <h5> <br> <br> The Timeless Charm of Log Homes</h5>
+                    <p>
+                        When it comes to homes that blend rustic charm with natural elegance, log homes stand out as
+                        timeless classics. These unique dwellings, constructed primarily from logs, have a rich history
+                        and continue to captivate the hearts of homeowners seeking a connection with nature. <br>
+
+                    <h5>A Symphony of Wood: Building with Logs</h5>
+
+                    Log homes, often referred to as log cabins, are crafted from horizontally stacked logs that
+                    interlock at the corners. The use of logs as the primary building material imparts a warm,
+                    rustic aesthetic to the structure. The logs themselves provide excellent insulation, creating
+                    cozy interiors in both warm and cold climates. <br>
+
+                    <h5>Embracing Nature: The Allure of Log Homes</h5>
+
+                    One of the most appealing aspects of log homes is their seamless integration into natural
+                    surroundings. Whether nestled in a forest, overlooking a lake, or perched on a mountainside, log
+                    homes have a unique ability to harmonize with the environment. The organic feel of the wood
+                    complements the beauty of the outdoors, creating a retreat-like atmosphere. <br>
+
+                    <h5>Durability and Sustainability: Log Homes for the Modern Age</h5>
+
+                    Modern log homes are not only picturesque but also showcase sustainability and durability.
+                    Builders often use logs from renewable sources, and the construction process minimizes waste.
+                    With proper maintenance, log homes can endure for generations, becoming cherished family
+                    heirlooms. <br>
+
+                    <h5>Design Versatility: From Traditional to Contemporary</h5>
+
+                    Contrary to common perception, log homes can embody diverse architectural styles. While
+                    traditional log cabins evoke a sense of nostalgia, contemporary log homes showcase sleek designs
+                    and innovative layouts. Architects and homeowners alike appreciate the versatility that log
+                    construction offers, allowing for customized and modern living spaces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- reviews -->
     <section class="bg-dark" style="margin-top: 100px;" id="review">
@@ -553,18 +738,10 @@
             </div>
 
             <hr>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="text-center text-light">
-                        Copyright &copy; 2023 <a href="#">Daffofil</a>.All Rights Reserved.
-                    </p>
-                </div>
-            </div>
+
         </div>
 
     </footer>
-
-
 
 
     <!-- bootstrap -->

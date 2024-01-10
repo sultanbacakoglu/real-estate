@@ -16,3 +16,41 @@ window.addEventListener('scroll', () => {
     }
 });
 
+function girisYap() {
+    // Kullanıcının girdiği bilgileri al
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    // Burada doğrulama ve hata yönetimi ekleyebilirsiniz
+
+    // Giriş işlemi (burada sunucuya bir istek gönderebilirsiniz)
+    if (email && password) {
+        alert("Giriş başarılı! Ana sayfaya yönlendiriliyor..."); // Bu kısmı gerçek giriş mantığı ile değiştirin
+        // Kullanıcıyı yönlendirebilir veya başka bir giriş sonrası işlem yapabilirsiniz
+        $('#loginModal').modal('hide'); // Modali kapat
+    } else {
+        alert("Geçersiz e-posta veya şifre. Lütfen tekrar deneyin."); // Bu kısmı gerçek hata yönetimi ile değiştirin
+    }
+}
+
+function openModal(title, content, imageUrl) {
+    document.getElementById('modalText').innerHTML = `<h5>${title}</h5>${content}`;
+    document.getElementById('modalImage').src = imageUrl;
+    $('#myModal').modal('show');
+}
+
+
+
+$(document).ready(function () {
+    // Sağ üst köşedeki çarpı butonuna tıklanınca modal kapatılır
+    $(".close-modal").click(function () {
+        $("#myModal").modal("hide");
+    });
+
+    // Modal kapatıldığında içeriği sıfırla
+    $("#myModal").on("hidden.bs.modal", function () {
+        $("#modalImage").attr("src", "");
+        $("#modalText").html("");
+    });
+});
+
